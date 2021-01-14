@@ -27,9 +27,10 @@ This program uses GRAPHICS from John Zelle. Since I started developing this in r
 - fourth click starts the animation. Fishes swim forward describing a sine form
 - When fish reach an edge of the quarium, they change direction 180 degrees and keep swimming
 - By pressing the key 'f' a piece of food is placed at a random position.
-- The fish that is closest to the food starts swimming towards it at a faster speed in a straight direction to it, but still with a superposed sine form
+- The fish that is closest to the food starts swimming towards it in a direct direction to it, but still with a superposed sine form. For example diagonal but in a sine shaped movement.
 - Once a fish ate the food, it keeps moving horizontally at it's initial speed.
-- A click on the aquarium represents tapping the glass
+- A click on the aquarium represents tapping the glass.
+- When tapping, all fishes close to the tap coordinate swim away for 50 cycles at speed 3 horizontally. They even change direction if needed to go away form the tap.
   
 ---
 

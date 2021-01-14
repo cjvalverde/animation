@@ -4,6 +4,10 @@
     <list default="true" id="0d2c1677-d40e-4238-8d84-a5182c636d73" name="Default Changelist" comment="updated README">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubble.py" beforeDir="false" afterPath="$PROJECT_DIR$/bubble.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fish.py" beforeDir="false" afterPath="$PROJECT_DIR$/fish.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/food.py" beforeDir="false" afterPath="$PROJECT_DIR$/food.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

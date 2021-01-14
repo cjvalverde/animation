@@ -48,51 +48,93 @@ def main():
     food_there = False
     dfx = 0
     dfy = 0
+    tapped = False
+    tappedX = 0
+    tappedY = 0
+    scared_count = 0
+    fish1_scared = False
+    fish2_scared = False
+    fish3_scared = False
     # 4. Start animation loop
     while win.checkKey() != "q":
 #      if win.checkMouse() != None:
 #          isMoving = not isMoving
       if (isMoving):
-          if fish1.eating:
-              fish1.move(dfx, dfy)
-              if (abs(fish1.getCenter().getX() - food.getCenter().getX()) < 20) or (abs(fish1.getCenter().getY() - food.getCenter().getY()) < 20):
-                  food.undraw()
-                  fish1.setEating(False)
+          clickedPoint = win.checkMouse()
+          if clickedPoint != None:
+              tapped = True
+              tappedX = clickedPoint.getX()
+              tappedY = clickedPoint.getY()
+              if (abs(fish1.getCenter().getX() - tappedX) < 100) and (abs(fish1.getCenter().getY() - tappedY) < 100):
+                  fish1_scared = True
+                  if (fish1.getCenter().getX() > tappedX and fish1.direction == 1) or (fish1.getCenter().getX() <= tappedX and fish1.direction == 0):
+                      fish1.toggleDirection()
+              if (abs(fish2.getCenter().getX() - tappedX) < 100) and (abs(fish2.getCenter().getY() - tappedY) < 100):
+                  fish2_scared = True
+                  if (fish2.getCenter().getX() > tappedX and fish2.direction == 1) or (fish2.getCenter().getX() <= tappedX and fish2.direction == 0):
+                      fish2.toggleDirection()
+              if (abs(fish3.getCenter().getX() - tappedX) < 100) and (abs(fish3.getCenter().getY() - tappedY) < 100):
+                  fish3_scared = True
+                  if (fish3.getCenter().getX() > tappedX and fish3.direction == 1) or (fish3.getCenter().getX() <= tappedX and fish3.direction == 0):
+                      fish3.toggleDirection()
+          if tapped:
+              if fish1_scared:
+                  fish1.move(3, 0)
+              if fish2_scared:
+                  fish2.move(3, 0)
+              if fish3_scared:
+                  fish3.move(3, 0)
+              scared_count += 1
+              if scared_count >= 50:
+                  scared_count = 0
+                  tapped = False
+                  fish1_scared = False
+                  fish2_scared = False
+                  fish3_scared = False
           else:
-              fish1.move(2, 0)
-          if fish2.eating:
-              fish2.move(dfx, dfy)
-              if (abs(fish2.getCenter().getX() - food.getCenter().getX()) < 20) or (abs(fish2.getCenter().getY() - food.getCenter().getY()) < 20):
-                  food.undraw()
-                  fish2.setEating(False)
-          else:
-              fish2.move(1, 0)
-          if fish3.eating:
-              fish3.move(dfx, dfy)
-              if (abs(fish3.getCenter().getX() - food.getCenter().getX()) < 20) or (abs(fish3.getCenter().getY() - food.getCenter().getY()) < 20):
-                  food.undraw()
-                  fish3.setEating(False)
-          else:
-              fish3.move(2, 0)
-          #
-          # control to toggle direction of fish if hits border
-          if (fish1.getCenter().getX() <= 40 and fish1.direction == 1) or (fish1.getCenter().getX() >= 560 and fish1.direction == 0):
-              fish1.toggleDirection()
-          if (fish2.getCenter().getX() <= 40 and fish2.direction == 1) or (fish2.getCenter().getX() >= 560 and fish2.direction == 0):
-              fish2.toggleDirection()
-          if (fish3.getCenter().getX() <= 40 and fish3.direction == 1) or (fish3.getCenter().getX() >= 560 and fish3.direction == 0):
-              fish3.toggleDirection()
-          #
-          bubble1.move()
-          bubble2.move()
-          bubble3.move()
-          bubble4.move()
-          bubble5.move()
+              if fish1.eating:
+                  fish1.move(dfx, dfy)
+                  if (abs(fish1.getCenter().getX() - food.getCenter().getX()) < 20) or (abs(fish1.getCenter().getY() - food.getCenter().getY()) < 20):
+                      food.undraw()
+                      fish1.setEating(False)
+                      food_there == False
+              else:
+                  fish1.move(2, 0)
+              if fish2.eating:
+                  fish2.move(dfx, dfy)
+                  if (abs(fish2.getCenter().getX() - food.getCenter().getX()) < 20) or (abs(fish2.getCenter().getY() - food.getCenter().getY()) < 20):
+                      food.undraw()
+                      fish2.setEating(False)
+                      food_there == False
+              else:
+                  fish2.move(1, 0)
+              if fish3.eating:
+                  fish3.move(dfx, dfy)
+                  if (abs(fish3.getCenter().getX() - food.getCenter().getX()) < 20) or (abs(fish3.getCenter().getY() - food.getCenter().getY()) < 20):
+                      food.undraw()
+                      fish3.setEating(False)
+                      food_there == False
+              else:
+                  fish3.move(2, 0)
+              #
+              # control to toggle direction of fish if hits border
+              if (fish1.getCenter().getX() <= 40 and fish1.direction == 1) or (fish1.getCenter().getX() >= 560 and fish1.direction == 0):
+                  fish1.toggleDirection()
+              if (fish2.getCenter().getX() <= 40 and fish2.direction == 1) or (fish2.getCenter().getX() >= 560 and fish2.direction == 0):
+                  fish2.toggleDirection()
+              if (fish3.getCenter().getX() <= 40 and fish3.direction == 1) or (fish3.getCenter().getX() >= 560 and fish3.direction == 0):
+                  fish3.toggleDirection()
+              #
+              bubble1.move()
+              bubble2.move()
+              bubble3.move()
+              bubble4.move()
+              bubble5.move()
       if win.checkKey() == "f":
           if food_there == False:
+              food_there == True
               food = Food(win, Point(random.randint(20, 580), random.randint(20, 380)))
               food.draw(win)
-              food_there == True
               distance1 = (int((food.getCenter().getX() - fish1.getCenter().getX())))**2 + (int(food.getCenter().getY() - fish1.getCenter().getY()))**2
               distance2 = (int(food.getCenter().getX() - fish2.getCenter().getX()))**2 + (int(food.getCenter().getY() - fish2.getCenter().getY()))**2
               distance3 = (int(food.getCenter().getX() - fish3.getCenter().getX()))**2 + (int(food.getCenter().getY() - fish3.getCenter().getY()))**2
