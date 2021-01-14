@@ -20,9 +20,22 @@ This program uses GRAPHICS from John Zelle. Since I started developing this in r
 
 ---
 
+## How it works
+
+- user places 3 fishes by clicking on the aquarium at the desired position
+- fishes are generated with random colors, randomly pointing left or right, and with a random speed setting (number of pixels it moves per cycle)
+- fourth click starts the animation. Fishes swim forward describing a sine form
+- When fish reach an edge of the quarium, they change direction 180 degrees and keep swimming
+- By pressing the key 'f' a piece of food is placed at a random position.
+- The fish that is closest to the food starts swimming towards it at a faster speed in a straight direction to it, but still with a superposed sine form
+- Once a fish ate the food, it keeps moving horizontally at it's initial speed.
+- A click on the aquarium represents tapping the glass
+  
+---
+
 ## Required modules
 
-- graphics
+- graphics --> downloaded from https://pypi.org/project/graphics.py/
 
 ---
 
