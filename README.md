@@ -6,7 +6,7 @@ Code files and classes needed to implement an animated and interactive aquarium.
 
 To test it, clone this repository and run main.py on any IDE. I use Pycharm.
 
-This program uses GRAPHICS from John Zelle. Since I started developing this in repl.it, I had to dwonload it from https://pypi.org/project/graphics.py/ and copy the file graphics.py in the project folder, next to main.py.
+This program uses GRAPHICS from John Zelle. Since I started developing this in repl.it, I had to dwonload it from https://pypi.org/project/graphics.py/ and copy the file graphics.py in the project folder, next to main.py. Since I didn't want to have two different versions of this program, I decided to leave it this way, as it wokrs fine both on- and offline. 
 
 ---
 
