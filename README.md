@@ -2,19 +2,20 @@
 
 **Version 1.0.0**
 
-Code files and classes needed to implement an animated and interactive aquarium
+Code files and classes needed to implement an animated and interactive aquarium.
+
 To test it, clone this repository and run main.py on any IDE. I use Pycharm.
-As you can notice the file graphics.py is included in the repossitory. Normally, you would have to download it and add it to your project folder (next to main) to get the pgraphics funktionalities.
+
+This program uses GRAPHICS from John Zelle. Since I started developing this in repl.it, I had to dwonload it from https://pypi.org/project/graphics.py/ and copy the file graphics.py in the project folder, next to main.py.
 
 ---
 
 ## Contents
 
-All files can be found in https://repl.it/@...
 - main.py
 - fish.py
 - bubble.py
-- graphics.py
+- graphics.py --> downloaded from https://pypi.org/project/graphics.py/
 - README.md
 
 ---
